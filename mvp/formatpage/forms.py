@@ -3,6 +3,11 @@ from django import forms
 
 from .models import PersonalInfo
 
+class ContactForm(forms.Form):
+    full_name = forms.CharField(required=False)
+    email = forms.EmailField()
+    message = forms.CharField()
+
 class PersonalInfoForm(forms.ModelForm):
 
     class Meta:
