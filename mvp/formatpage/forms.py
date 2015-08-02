@@ -18,9 +18,9 @@ class PersonalInfoForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         email_base, provider = email.split('@')
         domain, extension = provider.split('.')
-        if not domain == 'USC':
+        if not domain == 'gmail':
             raise forms.ValidationError("Please make sure you use your USC email")
-        if not extension == 'edu':
+        if not extension == 'com':
             raise forms.ValidationError("Please use a valid .EDU email address")
         return email
 

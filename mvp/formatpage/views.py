@@ -28,7 +28,7 @@ def home(request):
             "template_title": "Thank you"
         }
 
-    return render(request, "home.html", context)
+    return render(request, "base.html", context)
 
 def contact(request):
     form = ContactForm(request.POST or None)
@@ -48,6 +48,7 @@ def contact(request):
             form_full_name,
             form_message,
             form_email)
+
         send_mail(subject,
                   contact_message,
                   from_email,
